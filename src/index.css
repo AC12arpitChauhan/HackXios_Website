@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Hackxios Dark Theme - All HSL colors */
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 180 100% 50%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 270 100% 30%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 300 100% 50%;
+    --accent-foreground: 0 0% 4%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 180 100% 50%;
+
+    --radius: 1rem;
+
+    /* Glassmorphism tokens */
+    --glass-bg: 0 0% 10% / 0.4;
+    --glass-border: 180 100% 50% / 0.3;
+    --glass-hover: 180 100% 50% / 0.5;
+    
+    /* Glow effects */
+    --glow-cyan: 180 100% 50%;
+    --glow-purple: 270 100% 50%;
+    --glow-magenta: 300 100% 50%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(180 100% 50%), hsl(270 100% 50%));
+    --gradient-hero: radial-gradient(ellipse at top, hsl(270 100% 30% / 0.3), transparent 50%),
+                     radial-gradient(ellipse at bottom, hsl(300 100% 30% / 0.2), transparent 50%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter overflow-x-hidden;
+    cursor: none;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-orbitron;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply backdrop-blur-xl bg-white/5 border border-white/10;
+  }
+  
+  .glass-card-hover {
+    @apply transition-all duration-300 hover:bg-white/10 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(0,255,255,0.3)];
+  }
+  
+  .glow-text {
+    text-shadow: 0 0 20px hsl(var(--glow-cyan) / 0.5);
+  }
+  
+  .glow-border {
+    box-shadow: 0 0 20px hsl(var(--glow-cyan) / 0.3), inset 0 0 20px hsl(var(--glow-cyan) / 0.1);
+  }
+  
+  .btn-glow {
+    @apply relative overflow-hidden;
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.5);
+    transition: all 0.3s ease;
+  }
+  
+  .btn-glow:hover {
+    box-shadow: 0 0 50px hsl(var(--primary) / 0.8);
+    transform: translateY(-2px);
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
