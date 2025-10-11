@@ -14,7 +14,7 @@ const Index = () => {
   return (
     <div className="relative">
       <BackgroundFlow/>
-      <CursorTrail />
+      {/* <CursorTrail /> */}
       <Navigation />
       <main>
         <Hero />
