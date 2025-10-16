@@ -2,25 +2,25 @@ const Prizes = () => {
   const prizes = [
     {
       position: "1st Place",
-      amount: "$500",
+      amount: "$200",
       perks: ["AWS Credits", "Mentorship Program", "Job Referrals"],
       size: "large",
     },
     {
       position: "2nd Place",
-      amount: "$200",
-      perks: ["AWS Credits", "Swag Pack"],
+      amount: "$135",
+      perks: ["AWS Credits", "Swag Pack", "Club Merchandise"],
       size: "medium",
     },
     {
       position: "3rd Place",
-      amount: "$100",
-      perks: ["Swag Pack"],
+      amount: "$90",
+      perks: ["Swag Pack", "Club Merchandise"],
       size: "medium",
     },
     {
       position: "Best AI Project",
-      perks: ["AWS Credits", "Special Recognition", "Swag Pack", "Mentorship Program"],
+      perks: ["AWS Credits", "Special Recognition", "Swag Pack", "Club Merchandise"],
       size: "small",
     }
   ];

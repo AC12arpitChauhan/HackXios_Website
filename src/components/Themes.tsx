@@ -1,4 +1,4 @@
-import { Brain, Leaf, Lock, Lightbulb } from "lucide-react";
+import { Brain, Leaf, Lock, Lightbulb, DollarSign } from "lucide-react";
 
 const themes = [
   {
@@ -8,10 +8,10 @@ const themes = [
     gradient: "from-primary to-secondary",
   },
   {
-    icon: Leaf,
-    title: "Sustainable Tech",
-    description: "Create solutions that combat climate change and promote environmental sustainability for a better future.",
-    gradient: "from-secondary to-accent",
+    icon: DollarSign,
+    title: "Fintech Solutions",
+    description: "Build innovative financial technology solutions that revolutionize banking, payments, and investment platforms for the digital age.",
+    gradient: "from-green-500 to-emerald-600",
   },
   {
     icon: Lock,
