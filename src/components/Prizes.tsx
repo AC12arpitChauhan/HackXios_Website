@@ -1,28 +1,17 @@
 const Prizes = () => {
   const prizes = [
     {
-      position: "1st Place",
-      amount: "$200",
-      perks: ["AWS Credits", "Mentorship Program", "Job Referrals"],
+      position: "Best Devops Project",
+      amount: "$150",
+      perks: ["Goodies", "Axios Swags", "Certificate"],
       size: "large",
     },
     {
-      position: "2nd Place",
-      amount: "$135",
-      perks: ["AWS Credits", "Swag Pack", "Club Merchandise"],
-      size: "medium",
+      position: "Best Ideation Project",
+      amount: "$100",
+      perks: ["Goodies", "Axios Swags", "Certificate"],
+      size: "large",
     },
-    {
-      position: "3rd Place",
-      amount: "$90",
-      perks: ["Swag Pack", "Club Merchandise"],
-      size: "medium",
-    },
-    {
-      position: "Best AI Project",
-      perks: ["AWS Credits", "Special Recognition", "Swag Pack", "Club Merchandise"],
-      size: "small",
-    }
   ];
 
   return (
@@ -47,31 +36,29 @@ const Prizes = () => {
           Prizes & Perks
         </h2>
         <p className="text-center text-muted-foreground mb-16 text-lg">
-          Compete for over $500 in prizes and exclusive opportunities
+          Compete for $250 in prizes and exclusive perks
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {prizes.map((prize, index) => (
             <div
               key={index}
-              className={`glass-card rounded-2xl p-8 hover:scale-105 transition-all duration-300 relative overflow-hidden group ${
-                prize.size === "large" ? "md:col-span-3 md:row-span-1" : ""
-              }`}
+              className="glass-card rounded-2xl p-10 hover:scale-105 transition-all duration-300 relative overflow-hidden group"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
               
               <div className="relative z-10">
-                <div className="text-sm font-bold text-primary mb-2">
+                <div className="text-sm font-bold text-primary mb-2 uppercase tracking-wide">
                   {prize.position}
                 </div>
-                <div className="text-4xl md:text-5xl font-black mb-4 glow-text">
+                <div className="text-5xl md:text-6xl font-black mb-6 glow-text">
                   {prize.amount}
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-3">
                   {prize.perks.map((perk, i) => (
-                    <div key={i} className="flex items-center gap-2 text-muted-foreground">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                      {perk}
+                    <div key={i} className="flex items-center gap-3 text-muted-foreground text-lg">
+                      <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
+                      <span>{perk}</span>
                     </div>
                   ))}
                 </div>

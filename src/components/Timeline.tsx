@@ -1,21 +1,21 @@
 import { useEffect, useRef, useState } from "react";
 
 const events = [
-  { time: "9:00 AM", title: "Registration & Check-in", description: "Get your badge and meet the team" },
-  { time: "10:00 AM", title: "Opening Ceremony", description: "Welcome address and theme reveal" },
-  { time: "11:00 AM", title: "Hacking Begins", description: "Start building your projects" },
-  { time: "2:00 PM", title: "Workshop: AI Fundamentals", description: "Learn from industry experts" },
-  { time: "6:00 PM", title: "Dinner Break", description: "Refuel and network" },
-  { time: "12:00 AM", title: "Midnight Checkpoint", description: "Mid-hack progress review" },
-  { time: "9:00 AM", title: "Final Sprint", description: "Last hours to polish your project" },
-  { time: "2:00 PM", title: "Submissions Close", description: "Submit your final project" },
-  { time: "4:00 PM", title: "Judging & Demos", description: "Present to the judges" },
-  { time: "6:00 PM", title: "Closing Ceremony", description: "Awards and celebrations" },
+  { time: "Now Open", title: "Registrations Open", description: "Register now to secure your spot" },
+  { time: "December 15, 2025", title: "Registration Closes", description: "Last date to register - 11:59 PM" },
+  { time: "December 23, 2025", title: "Stage-I PPT Submission", description: "Submit ideation PPT for shortlisting - 11:59 PM" },
+  { time: "December 25, 2025", title: "Shortlisting Released", description: "Check if your team is selected" },
+  { time: "December 29, 2025", title: "Hackathon Begins", description: "Start building your projects" },
+  { time: "11:00 AM, Dec 29", title: "Opening Ceremony", description: "Welcome address and kickoff" },
+  { time: "5:00 PM, Dec 30", title: "Evening Break & Interaction", description: "Network and relax with the community" },
+  { time: "11:00 PM, Dec 30", title: "Hackathon Ends", description: "Submit your final projects" },
+  { time: "After Submissions", title: "Projects Evaluation", description: "Judges review and score projects" },
+  { time: "TBA", title: "Results Announced", description: "Winners revealed as soon as possible!" },
 ];
 
 const Timeline = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const timelineRef = useRef<HTMLDivElement>(null);
+  const timelineRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

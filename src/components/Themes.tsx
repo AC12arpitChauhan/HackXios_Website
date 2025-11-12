@@ -1,29 +1,17 @@
-import { Brain, Leaf, Lock, Lightbulb, DollarSign } from "lucide-react";
+import { Cloud, Lightbulb } from "lucide-react";
 
 const themes = [
   {
-    icon: Brain,
-    title: "AI & Machine Learning",
-    description: "Build intelligent systems that learn, adapt, and transform industries with cutting-edge AI technologies.",
+    icon: Cloud,
+    title: "Best Devops Project",
+    description: "The project idea, the challenge it solves and the tech stack used definitely matters but the idea with the best implementation of cloud resources, databases, load balancing and security to make their idea the most scalable and future proof wins this track!",
     gradient: "from-primary to-secondary",
   },
   {
-    icon: DollarSign,
-    title: "Fintech Solutions",
-    description: "Build innovative financial technology solutions that revolutionize banking, payments, and investment platforms for the digital age.",
-    gradient: "from-green-500 to-emerald-600",
-  },
-  {
-    icon: Lock,
-    title: "Web3 & Blockchain",
-    description: "Develop decentralized applications and explore the future of trustless, transparent technology.",
-    gradient: "from-accent to-primary",
-  },
-  {
     icon: Lightbulb,
-    title: "Open Innovation",
-    description: "Unleash your creativity with no boundaries. Build anything that solves real-world problems.",
-    gradient: "from-primary via-accent to-secondary",
+    title: "Best Ideation Project",
+    description: "The project that solves a real life problem with a unique ideation and in the most creative, resourceful, and feasible way wins this track!",
+    gradient: "from-accent to-primary",
   },
 ];
 
@@ -37,7 +25,7 @@ const Themes = () => {
           Choose Your Track
         </h2>
         <p className="text-center text-muted-foreground mb-16 text-lg">
-          Pick a theme that ignites your passion and start building
+          Pick a track that ignites your passion and start building
         </p>
 
         <div className="grid md:grid-cols-2 gap-8">

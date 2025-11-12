@@ -1,14 +1,21 @@
 const Sponsors = () => {
   const sponsors = [
     {
-      name: "AWS",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
+      name: "Devfolio",
+      logo: "/devfo.png",
     },
     {
-      name: "Devfolio",
-      logo: "/image.png",
+      name: "EthIndia",
+      logo: "/ethind.png",
     },
   ];
+
+  const scrollToFooter = () => {
+    const footer = document.getElementById('footer');
+    if (footer) {
+      footer.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <section id="sponsors" className="py-24 px-6">
@@ -17,7 +24,7 @@ const Sponsors = () => {
           Our Partners
         </h2>
         <p className="text-muted-foreground mb-16 text-lg">
-          Powered by industry leaders
+          In collaboration with industry leaders
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-16">
@@ -29,7 +36,7 @@ const Sponsors = () => {
               <img
                 src={sponsor.logo}
                 alt={sponsor.name}
-                className="h-16 md:h-20 "
+                className="h-16 md:h-20 opacity-90 hover:opacity-100 transition-opacity"
               />
             </div>
           ))}
@@ -40,8 +47,11 @@ const Sponsors = () => {
           <p className="text-muted-foreground mb-6">
             Join us in empowering the next generation of innovators
           </p>
-          <button className="btn-glow text-background font-semibold px-8 py-3 rounded-full">
-            Become a Sponsor
+          <button 
+            onClick={scrollToFooter}
+            className="btn-glow text-background font-semibold px-8 py-3 rounded-full"
+          >
+            Contact Us
           </button>
         </div>
       </div>

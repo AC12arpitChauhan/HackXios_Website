@@ -1,48 +1,44 @@
-import { useEffect, useState, useRef } from "react";
-import { Button } from "@/components/ui/button";
+import { useState, useEffect, useRef } from 'react';
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState("");
-  const fullText = "HackXios 2025";
+  const [imgVisible, setImgVisible] = useState(false);
+  const imgRef = useRef(null);
+  const fullText = "Welcome to Hackxios 2k25";
 
   useEffect(() => {
     let index = 0;
-    const timer = setInterval(() => {
+    const interval = setInterval(() => {
       if (index <= fullText.length) {
         setDisplayText(fullText.slice(0, index));
         index++;
       } else {
-        clearInterval(timer);
+        clearInterval(interval);
       }
-    }, 100);
-
-    return () => clearInterval(timer);
+    }, 80);
+    return () => clearInterval(interval);
   }, []);
 
-  // image reveal on scroll
-  const imgRef = useRef<HTMLDivElement | null>(null);
-  const [imgVisible, setImgVisible] = useState(false);
-
   useEffect(() => {
-    const el = imgRef.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setImgVisible(true);
-            io.unobserve(entry.target);
-          }
-        });
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setImgVisible(true);
+        }
       },
-      { threshold: 0.35 }
+      { threshold: 0.2 }
     );
-    io.observe(el);
-    return () => io.disconnect();
+
+    if (imgRef.current) {
+      observer.observe(imgRef.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-12">
+    // Added pt-20 to push the optical center down slightly
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-12">
       {/* Particle effect background */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px] animate-float" />
@@ -50,8 +46,11 @@ const Hero = () => {
         <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-secondary/20 rounded-full blur-[120px] animate-float" style={{ animationDelay: "4s" }} />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-4">
-        <div className="grid lg:grid-cols-2 gap-8 items-start">
+      {/* Added mt-10 to nudge content down further */}
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-4 mt-10">
+        
+        {/* Changed items-start to items-center to align image with text vertically */}
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
           
           {/* Left Column - Content */}
           <div className="flex flex-col justify-center space-y-6">
@@ -62,7 +61,7 @@ const Hero = () => {
                   <div key={i} className="w-8 h-8 rounded-full bg-gradient-to-r from-primary to-secondary border-2 border-background" />
                 ))}
               </div>
-              <span className="text-sm text-muted-foreground">1000+ Students</span>
+              <span className="text-sm text-muted-foreground">Be Industry Ready!</span>
             </div>
 
             {/* Main Heading */}
@@ -83,24 +82,24 @@ const Hero = () => {
 
             {/* CTA Button */}
             <div>
-              <Button className="btn-glow text-background font-bold text-lg px-10 py-6 rounded-full">
-                Apply with Devfolio →
-              </Button>
+              <a 
+                href="https://hackxios2k25.devfolio.co/overview" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <button className="btn-glow text-background font-bold text-lg px-10 py-6 rounded-full">
+                  Apply with Devfolio →
+                </button>
+              </a>
             </div>
 
-            {/* Sponsor Section - Prominently Displayed */}
+            {/* Sponsor Section */}
             <div className="pt-8 border-t border-border/30">
               <p className="text-sm text-muted-foreground mb-6 uppercase tracking-widest font-semibold">
-                Powered By
+                In Collaboration With
               </p>
-              <div className="grid grid-cols-3 gap-0 items-center max-w-2xl">
-                <div className="flex items-center justify-center p-8 rounded-lg bg-background/5 hover:bg-background/10 transition-all h-32 md:h-40">
-                  <img
-                    src="/aws.png"
-                    alt="AWS"
-                    className="max-h-full w-full object-contain opacity-90 hover:opacity-100 transition-opacity"
-                  />
-                </div>
+              <div className="grid grid-cols-2 gap-6 items-center max-w-xl">
                 <div className="flex items-center justify-center p-6 rounded-lg bg-background/5 hover:bg-background/10 transition-all h-32 md:h-40">
                   <img 
                     src="/devfo.png" 

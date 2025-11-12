@@ -12,11 +12,10 @@ const About = () => {
               <span className="text-2xl">🚀</span>
             </div>
             <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">
-              Innovation First
+              Innovation
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Hackxios 2025 is where the brightest minds come together to push the boundaries of technology. 
-              Build groundbreaking solutions across AI, Web3, and sustainable tech in an electrifying 48-hour sprint.
+              HackXios 2k25 emphasizes on hackers to implement devops and cloud services and create the project you always wished to, showing innovation and creativity implemented with impressive coding and deployment skills. Make your idea production ready, deploy it using cloud services and databases, ready to be future proof and scalable.
             </p>
           </div>
 
@@ -28,8 +27,7 @@ const About = () => {
               Compete for Glory
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Compete for incredible prizes, mentorship from industry leaders, and the chance to showcase your project 
-              to top tech companies. Your next big opportunity starts here.
+              Compete for incredible Cash Prize, Goodies, Merchandise and Certificates. Get the chance to showcase your idea to industry experts, this is the opportunity you have been waiting for!
             </p>
           </div>
 
@@ -41,8 +39,7 @@ const About = () => {
               Collaborate & Network
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Connect with fellow developers, designers, and entrepreneurs. Build lasting relationships, 
-              find co-founders, and become part of a thriving tech community.
+              Connect with fellow developers, students, and entrepreneurs. Build lasting relationships, find co-founders, and become part of a thriving tech community.
             </p>
           </div>
 
@@ -54,8 +51,7 @@ const About = () => {
               Learn & Grow
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Access workshops, mentorship sessions, and resources from industry experts. 
-              Whether you're a beginner or a pro, you'll level up your skills at Hackxios.
+              Access workshops, mentorship sessions, and resources from industry experts through Axios. Whether you're a beginner or a pro, you'll level up your skills at Hackxios.
             </p>
           </div>
         </div>

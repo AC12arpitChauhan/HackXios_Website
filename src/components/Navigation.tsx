@@ -62,9 +62,9 @@ const Navigation = () => {
             </button>
           </div>
 
-          <Button className="btn-glow text-background font-semibold px-6 py-2 rounded-full">
+          {/* <Button className="btn-glow text-background font-semibold px-6 py-2 rounded-full">
             Register Now
-          </Button>
+          </Button> */}
         </div>
       </div>
     </nav>
