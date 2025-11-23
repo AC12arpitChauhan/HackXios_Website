@@ -1,73 +1,61 @@
-# Welcome to your Lovable project
+# Hackxios Website
 
-## Project info
+The official landing page for Hackxios 2025 – A National Level Hackathon organized by IIIT Bhopal.
 
-**URL**: https://lovable.dev/projects/58fd2bbe-0c0b-4165-b600-944738fa0136
+**Live Demo:** [hackxios-website.vercel.app](https://hackxios-website.vercel.app)
 
-## How can I edit this code?
+## 📋 About
 
-There are several ways of editing your application.
+This project is the main informational hub for the event, featuring event details, timelines, tracks, and registration portals. It is designed to be modern, responsive, and accessible.
 
-**Use Lovable**
+## ✨ Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/58fd2bbe-0c0b-4165-b600-944738fa0136) and start prompting.
+* **Hero Section:** Eye-catching landing with "Innovate. Collaborate. Dominate." theme.
+* **Event Details:** Information on rounds (IdeaX & BuildX).
+* **Timeline:** Interactive schedule of events.
+* **Themes & Tracks:** Categories for hackathon problem statements.
+* **Registration:** Direct links to Unstop/Devfolio.
+* **Responsive Design:** Optimized for mobile and desktop views.
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🛠️ Tech Stack
 
-**Use your preferred IDE**
+* **Framework:** Next.js / React
+* **Styling:** Tailwind CSS
+* **Deployment:** Vercel
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🏃 Getting Started
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 1. Clone the repository:
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```bash
+git clone https://github.com/your-username/hackxios-website.git
+cd hackxios-website
 ```
 
-**Edit a file directly in GitHub**
+### 2. Install dependencies:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+npm install
+# or
+yarn install
+```
 
-**Use GitHub Codespaces**
+### 3. Run the development server:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-## What technologies are used for this project?
+### 4. Open locally:
 
-This project is built with:
+Navigate to `http://localhost:3000` in your browser.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🤝 Contributing
 
-## How can I deploy this project?
+Contributions are welcome! Please fork the repo and submit a Pull Request.
 
-Simply open [Lovable](https://lovable.dev/projects/58fd2bbe-0c0b-4165-b600-944738fa0136) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Made with ❤️ for Hackxios 2025
