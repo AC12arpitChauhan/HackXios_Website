@@ -1,3 +1,4 @@
+import { Rocket, Lightbulb,Trophy,Handshake } from "lucide-react";
 const About = () => {
   return (
     <section id="about" className="py-24 px-6">
@@ -9,7 +10,7 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-8">
           <div className="glass-card glass-card-hover rounded-2xl p-8 group">
             <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-secondary mb-6 flex items-center justify-center glow-border">
-              <span className="text-2xl">🚀</span>
+              <Rocket></Rocket>
             </div>
             <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">
               Innovation
@@ -21,7 +22,7 @@ const About = () => {
 
           <div className="glass-card glass-card-hover rounded-2xl p-8 group">
             <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-secondary to-accent mb-6 flex items-center justify-center glow-border">
-              <span className="text-2xl">🏆</span>
+              <Trophy></Trophy>
             </div>
             <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">
               Compete for Glory
@@ -33,7 +34,7 @@ const About = () => {
 
           <div className="glass-card glass-card-hover rounded-2xl p-8 group">
             <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-accent to-primary mb-6 flex items-center justify-center glow-border">
-              <span className="text-2xl">🤝</span>
+              <Handshake></Handshake>
             </div>
             <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">
               Collaborate & Network
@@ -45,7 +46,7 @@ const About = () => {
 
           <div className="glass-card glass-card-hover rounded-2xl p-8 group">
             <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-accent mb-6 flex items-center justify-center glow-border">
-              <span className="text-2xl">💡</span>
+              <Lightbulb></Lightbulb>
             </div>
             <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">
               Learn & Grow
