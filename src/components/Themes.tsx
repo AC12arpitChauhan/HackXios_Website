@@ -1,4 +1,6 @@
 import { Cloud, Lightbulb } from "lucide-react";
+import { motion } from "framer-motion";
+import ThreeScene from "./ThreeScene";
 
 const themes = [
   {
@@ -32,41 +34,26 @@ const Themes = () => {
           {themes.map((theme, index) => {
             const Icon = theme.icon;
             return (
-              <div
+              <motion.div
                 key={index}
-                className="glass-card rounded-2xl p-8 group hover:scale-105 transition-all duration-300 cursor-pointer"
-                style={{
-                  transform: "perspective(1000px) rotateX(0deg) rotateY(0deg)",
-                  transition: "transform 0.3s ease-out, box-shadow 0.3s ease-out",
-                }}
-                onMouseMove={(e) => {
-                  const card = e.currentTarget;
-                  const rect = card.getBoundingClientRect();
-                  const x = e.clientX - rect.left;
-                  const y = e.clientY - rect.top;
-                  const centerX = rect.width / 2;
-                  const centerY = rect.height / 2;
-                  const rotateX = (y - centerY) / 10;
-                  const rotateY = (centerX - x) / 10;
-                  card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform =
-                    "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
-                }}
+                whileHover={{ scale: 1.03, rotateX: 2 }}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="glass-card glass-card-hover rounded-2xl p-8 group cursor-pointer transition-all duration-300 relative overflow-hidden"
               >
+                <div className="absolute left-4 bottom-4 w-36 h-36 opacity-25 pointer-events-none">
+                  <ThreeScene mode={index % 2 === 0 ? "knot" : "particles"} interactive />
+                </div>
                 <div
-                  className={`w-16 h-16 rounded-xl bg-gradient-to-br ${theme.gradient} mb-6 flex items-center justify-center glow-border group-hover:shadow-xl group-hover:shadow-primary/50 transition-all`}
+                  className={`w-16 h-16 rounded-xl bg-gradient-to-br ${theme.gradient} mb-6 flex items-center justify-center transition-shadow`}
+                  style={{ boxShadow: '0 8px 22px rgba(0,0,0,0.16)' }}
                 >
                   <Icon className="w-8 h-8 text-background" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">
-                  {theme.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {theme.description}
-                </p>
-              </div>
+                <h3 className="text-2xl font-semibold mb-4">{theme.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{theme.description}</p>
+              </motion.div>
             );
           })}
         </div>

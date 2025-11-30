@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import ThreeScene from "./ThreeScene";
 
 const events = [
   { time: "Now Open", title: "Registrations Open", description: "Register now to secure your spot" },
@@ -37,11 +39,11 @@ const Timeline = () => {
   }, []);
 
   return (
-    <section id="timeline" className="py-24 px-6">
+    <section id="timeline" className="py-24 px-6 relative overflow-visible">
       <div className="container mx-auto max-w-4xl">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 glow-text">
+        <motion.h2 initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-4xl md:text-5xl font-extrabold text-center mb-16">
           Event Timeline
-        </h2>
+        </motion.h2>
 
         <div ref={timelineRef} className="relative">
           {/* Glowing line */}
@@ -53,40 +55,24 @@ const Timeline = () => {
 
           <div className="space-y-2">
             {events.map((event, index) => (
-              <div
-                key={index}
-                data-index={index}
-                className={`timeline-item relative pl-20 md:pl-0 ${
-                  index % 2 === 0 ? "md:text-right md:pr-[52%]" : "md:pl-[52%]"
-                }`}
-              >
-                <div
-                  className={`absolute left-8 md:left-1/2 top-0 w-4 h-4 rounded-full -ml-[7px] transition-all duration-300 ${
-                    index <= activeIndex
-                      ? "bg-primary shadow-lg shadow-primary/50 scale-125"
-                      : "bg-muted"
-                  }`}
-                >
-                  {index <= activeIndex && (
-                    <div className="absolute inset-0 rounded-full bg-primary animate-ping opacity-75" />
-                  )}
+              <motion.div key={index} data-index={index} whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 10 }} viewport={{ once: true }} className={`timeline-item relative pl-20 md:pl-0 ${index % 2 === 0 ? "md:text-right md:pr-[52%]" : "md:pl-[52%]"}`}>
+                <div className={`absolute left-8 md:left-1/2 top-0 w-4 h-4 rounded-full -ml-[7px] transition-all duration-300 ${index <= activeIndex ? "bg-primary shadow-lg shadow-primary/50 scale-125" : "bg-muted"}`}>
+                  {index <= activeIndex && <div className="absolute inset-0 rounded-full bg-primary animate-ping opacity-75" />}
                 </div>
 
-                <div
-                  className={`glass-card rounded-xl p-6 transition-all duration-500 ${
-                    index <= activeIndex
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-50 translate-y-4"
-                  }`}
-                >
-                  <div className="text-sm font-bold text-primary mb-2">{event.time}</div>
-                  <h3 className="text-xl font-bold mb-2">{event.title}</h3>
+                <div className={`glass-card glass-card-hover rounded-xl p-6 transition-all duration-500 ${index <= activeIndex ? "opacity-100 translate-y-0" : "opacity-50 translate-y-4"}`}>
+                  <div className="text-sm font-semibold text-primary mb-2">{event.time}</div>
+                  <h3 className="text-xl font-semibold mb-2">{event.title}</h3>
                   <p className="text-muted-foreground">{event.description}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
+      </div>
+
+      <div className="pointer-events-none absolute right-6 top-6 w-40 h-40 opacity-30">
+        <ThreeScene mode="knot" />
       </div>
     </section>
   );

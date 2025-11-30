@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { motion } from "framer-motion";
 
 const faqs = [
   {
@@ -59,46 +60,25 @@ const FAQ = () => {
   return (
     <section id="faq" className="py-24 px-6">
       <div className="container mx-auto max-w-3xl">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 glow-text">
+        <motion.h2 initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-4xl md:text-5xl font-extrabold text-center mb-4">
           Frequently Asked Questions
-        </h2>
-        <p className="text-center text-muted-foreground mb-16 text-lg">
-          Everything you need to know about Hackxios
-        </p>
+        </motion.h2>
+        <p className="text-center text-muted-foreground mb-16 text-lg">Everything you need to know about Hackxios</p>
 
         <Accordion type="single" collapsible className="space-y-4">
           {faqs.map((faq, index) => (
-            <AccordionItem
-              key={index}
-              value={`item-${index}`}
-              className="glass-card rounded-xl border-none px-6 data-[state=open]:border-primary/50 data-[state=open]:shadow-lg data-[state=open]:shadow-primary/20 transition-all"
-            >
-              <AccordionTrigger className="text-left font-semibold text-lg hover:text-primary transition-colors">
-                {faq.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground leading-relaxed pt-2">
-                {faq.answer}
-              </AccordionContent>
-            </AccordionItem>
+            <motion.div key={index} initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <AccordionItem value={`item-${index}`} className="glass-card glass-card-hover rounded-xl border-none px-6 data-[state=open]:border-primary/50 data-[state=open]:shadow-lg data-[state=open]:shadow-primary/20 transition-all">
+                <AccordionTrigger className="text-left font-semibold text-lg hover:text-primary transition-colors">{faq.question}</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed pt-2">{faq.answer}</AccordionContent>
+              </AccordionItem>
+            </motion.div>
           ))}
         </Accordion>
 
         <div className="mt-16 text-center">
-          <p className="text-muted-foreground mb-4">
-            Still have questions? Mail us at{" "}
-            <a 
-              href="mailto:axios.iiitbhopal@gmail.com" 
-              className="text-primary hover:underline"
-            >
-              axios.iiitbhopal@gmail.com
-            </a>
-          </p>
-          <button 
-            onClick={scrollToFooter}
-            className="btn-glow text-background font-semibold px-8 py-3 rounded-full"
-          >
-            Contact Us
-          </button>
+          <p className="text-muted-foreground mb-4">Still have questions? Mail us at <a href="mailto:axios.iiitbhopal@gmail.com" className="text-primary hover:underline">axios.iiitbhopal@gmail.com</a></p>
+          <motion.button onClick={scrollToFooter} whileHover={{ y: -3 }} className="bg-primary text-background font-semibold px-8 py-3 rounded-full shadow-sm">Contact Us</motion.button>
         </div>
       </div>
     </section>

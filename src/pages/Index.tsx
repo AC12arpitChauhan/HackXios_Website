@@ -9,11 +9,13 @@ import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import CursorTrail from "@/components/CursorTrail";
 import BackgroundFlow from "@/components/BackgroundFlow";
+import PageParticles from "@/components/PageParticles";
 
 const Index = () => {
   return (
     <div className="relative">
       <BackgroundFlow/>
+      <PageParticles />
       {/* <CursorTrail /> */}
       <Navigation />
       <main>
