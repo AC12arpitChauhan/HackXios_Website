@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import CursorTrail from "@/components/CursorTrail";
 import BackgroundFlow from "@/components/BackgroundFlow";
 import PageParticles from "@/components/PageParticles";
+import Ps from "@/components/ps";
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
         <Hero />
         <About />
         <Themes />
+        <Ps />
         <Timeline />
         <Sponsors />
         <Prizes />
