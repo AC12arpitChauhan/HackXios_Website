@@ -37,6 +37,7 @@ const Navigation = () => {
             {[
               { id: "about", label: "About" },
               { id: "themes", label: "Themes" },
+              { id: "ps", label: "Problem Statement"},
               { id: "timeline", label: "Timeline" },
               { id: "sponsors", label: "Sponsors" },
               { id: "faq", label: "FAQ" },
